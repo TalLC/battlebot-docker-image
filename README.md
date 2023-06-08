@@ -4,14 +4,14 @@
 Pour construire l'image Docker à partir du Dockerfile, utilisez la commande `docker build` :
 
 ```sh
-docker build --no-cache -t battlebots:0.5.1 .
+docker build --no-cache -t battlebots:0.5.2 .
 ```
 
 ## Sauvegarde de l'image sous forme de fichier
 Pour exporter l'image Docker en tant que fichier tar, utilisez la commande `docker save` :
 
 ```sh
-docker save -o battlebots.tar battlebots:0.5.1
+docker save -o battlebots.tar battlebots:0.5.2
 ```
 
 
@@ -26,7 +26,7 @@ docker load -i battlebots.tar
 Pour démarrer un conteneur à partir de l'image Docker, utilisez la commande `docker run` :
 
 ```sh
-docker run -d --rm -p 8000:8000 -p 61613:61613 -p 1883:1883 battlebots:0.5.1
+docker run -d --rm -p 8000:8000 -p 61613:61613 -p 1883:1883 battlebots:0.5.2
 ```
 
 Explication des options utilisées :
@@ -46,7 +46,7 @@ Pour démarrer un conteneur en utilisant docker compose :
 version: '3'
 services:
   battlebots:
-    image: battlebots:0.5.1
+    image: battlebots:0.5.2
     ports:
       - 8000:8000
       - 61613:61613
@@ -74,7 +74,7 @@ Pour activer le mode débug, passer la variable d'environnement `BATTLEBOTS_DEBU
 En ligne de commande :
 
 ```sh
-docker run -d --rm -p 8000:8000 -p 61613:61613 -p 1883:1883 -e BATTLEBOTS_DEBUG=true battlebots:0.5.1
+docker run -d --rm -p 8000:8000 -p 61613:61613 -p 1883:1883 -e BATTLEBOTS_DEBUG=true battlebots:0.5.2
 ```
 
 Dans le fichier `docker-compose.yml`
