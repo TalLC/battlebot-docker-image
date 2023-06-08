@@ -4,7 +4,7 @@
 Pour construire l'image Docker à partir du Dockerfile, utilisez la commande `docker build` :
 
 ```sh
-docker build -t battlebots:0.5.1 .
+docker build --no-cache -t battlebots:0.5.1 .
 ```
 
 ## Sauvegarde de l'image sous forme de fichier
